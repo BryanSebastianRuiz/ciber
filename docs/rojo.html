@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equipo Rojo - CTF Virtual</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body class="rojo" data-equipo="Rojo">
+  <div class="container">
+    <h1 class="titulo">Equipo Rojo</h1>
+
+    <div class="flags">
+      <h2>Ingresar Flags</h2>
+      <form id="flagForm" onsubmit="return false;">
+        <!-- Flags 1 a 5 (estructura HTML sin cambios) -->
+        <div>
+          <label for="flag1">Flag 1:</label><br><br>
+          <img src="img/imagen15.png" alt="CTF Logo" class="logo" width="150" height="100">
+          <p><a href="RETO1.zip" download>📁 Descargar carpeta relacionada con Flag 1</a></p>
+          <input type="text" id="flag1"><br>
+          <button type="button" id="btn-flag1" class="flag-btn">Verificar Flag 1</button><br>
+          <span id="flag1-resultado"></span><br><br>
+        </div>
+        <div>
+          <label for="flag2">Flag 2:</label><br><br>
+          <img src="img/imagen5.png" alt="CTF Logo" class="logo" width="150" height="100">
+          <p><a href="RETO2.zip" download>📁 Descargar carpeta relacionada con Flag 2</a></p>
+          <input type="text" id="flag2"><br>
+          <button type="button" id="btn-flag2" class="flag-btn">Verificar Flag 2</button><br>
+          <span id="flag2-resultado"></span><br><br>
+        </div>
+        <div>
+          <label for="flag3">Flag 3:</label><br><br>
+          <img src="img/imagen6.png" alt="CTF Logo" class="logo" width="150" height="100">
+          <p><a href="RETO3.zip" download>📁 Descargar carpeta relacionada con Flag 3</a></p>
+          <input type="text" id="flag3"><br>
+          <button type="button" id="btn-flag3" class="flag-btn">Verificar Flag 3</button><br>
+          <span id="flag3-resultado"></span><br><br>
+        </div>
+        <div>
+          <label for="flag4">Flag 4:</label><br><br>
+          <img src="img/imagen7.png" alt="CTF Logo" class="logo" width="150" height="100">
+          <p><a href="RETO4.zip" download>📁 Descargar carpeta relacionada con Flag 4</a></p>
+          <input type="text" id="flag4"><br>
+          <button type="button" id="btn-flag4" class="flag-btn">Verificar Flag 4</button><br>
+          <span id="flag4-resultado"></span><br><br>
+        </div>
+      </form>
+    </div>
+
+    <!-- Puedes poner esto en rojo.html o donde sea -->
+<button onclick="redirigirChat()">💬 Ir al Chat del Equipo</button>
+
+<script>
+function redirigirChat() {
+  const equipo = document.body.dataset.equipo;
+  if (equipo === "Rojo") {
+    window.location.href = "chat_rojo.html";
+  } else if (equipo === "Morado") {
+    window.location.href = "chat_morado.html";
+  } else if (equipo === "Azul") {
+    window.location.href = "chat_azul.html";
+  } else {
+    alert("Equipo no reconocido.");
+  }
+}
+</script>
+
+    <div style="margin-top: 20px;">
+      <button onclick="window.location.href='scoreboard.html'" style="padding: 10px 20px; font-size: 16px;">
+        🏆 Ver Scoreboard
+      </button>
+    </div>
+
+  <!-- === ORDEN DE SCRIPTS CRÍTICO === -->
+  <script src="scripts/config.js"></script>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+
+  <!-- Inicialización -->
+  <script src="scripts/firebase-init.js"></script>
+
+  <!-- Funcionalidad -->
+  <script src="scripts/equipo.js"></script>
+  <script src="scripts/tabla.js"></script>
+
+</body>
+</html>
