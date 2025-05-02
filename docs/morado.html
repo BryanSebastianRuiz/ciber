@@ -1,11 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Equipo Morado - CTF Virtual</title>
-  <link rel="stylesheet" href="styles/style.css">
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Equipo Morado | CTF Virtual</title>
+    
+    <!-- Descripción para SEO -->
+    <meta name="description" content="Participación del Equipo Morado en el Capture The Flag (CTF) Virtual.">
+    <meta name="author" content="Equipo Morado">
+  
+    <!-- Icono de pestaña -->
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    
+    <!-- Tipografía profesional -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  
+    <!-- Open Graph para compartir en redes sociales -->
+    <meta property="og:title" content="Equipo Morado - CTF Virtual">
+    <meta property="og:description" content="Explora el trabajo y logros del Equipo Morado en este evento de ciberseguridad.">
+    <meta property="og:image" content="https://i.imgur.com/zP7C8zS.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tusitio.com/equipomorado">
+  
+    <!-- Estilo principal -->
+    <link rel="stylesheet" href="styles/style.css">
+  </head>
+  
 
 <body class="morado" data-equipo="Morado">
   <div class="container">
@@ -13,67 +34,148 @@
 
     <div class="flags">
       <h2>Ingresar Flags</h2>
-      <form id="flagForm" onsubmit="return false;">
+      <form id="flagForm" onsubmit="return false;"> <!-- Evitar envío real del form -->
         <!-- Flags 1 a 5 (estructura HTML sin cambios) -->
-        <div>
-          <label for="flag1">Flag 1:</label><br><br>
-          <img src="img/imagen15.png" alt="CTF Logo" class="logo" width="150" height="100">
-          <p><a href="RETO1.zip" download>📁 Descargar carpeta relacionada con Flag 1</a></p>
-          <input type="text" id="flag1"><br>
-          <button type="button" id="btn-flag1" class="flag-btn">Verificar Flag 1</button><br>
-          <span id="flag1-resultado"></span><br><br>
+        <div class="challenge-card">
+          <div class="card-content">
+            <label for="flag1">Flag 1:</label><br><br>
+            <img src="img/imagen15.png" alt="CTF Logo" class="logo" width="150" height="100">
+            <p><a href="RETO1.zip" download>📁 Descargar carpeta relacionada con Flag 1</a></p>
+            <input type="text" id="flag1"><br>
+            <button type="button" id="btn-flag1">Verificar Flag 1</button><br>
+            <span id="flag1-resultado"></span>
+          </div>
+        </div>        
+        <div style="text-align:center;">
+          <table style="margin: 0 auto;" cellpadding="5" border="2">
+            <tr>
+              <h4>
+                <td>
+                  <p>
+                    <font size=4 face="verdana, arial, helvetica"><b>Información de la Flag 1 </b></font>
+                  </p>
+                  <p>
+                    <b>Tu misión sera</b>
+                  </p>
+                </td>
+              </h4>
+            </tr>
+          </table>
         </div>
-        <div>
-          <label for="flag2">Flag 2:</label><br><br>
-          <img src="img/imagen5.png" alt="CTF Logo" class="logo" width="150" height="100">
-          <p><a href="RETO2.zip" download>📁 Descargar carpeta relacionada con Flag 2</a></p>
-          <input type="text" id="flag2"><br>
-          <button type="button" id="btn-flag2" class="flag-btn">Verificar Flag 2</button><br>
-          <span id="flag2-resultado"></span><br><br>
+        <br><br><br>
+
+        <div class="challenge-card">
+          <div class="card-content">
+            <label for="flag2">Flag 2:</label><br><br>
+            <img src="img/imagen11.png" alt="CTF Logo" class="logo" width="150" height="100">
+            <p><a href="RETO2.zip" download>📁 Descargar carpeta relacionada con Flag 2</a></p>
+            <input type="text" id="flag2"><br>
+            <button type="button" id="btn-flag2">Verificar Flag 2</button><br>
+            <span id="flag2-resultado"></span>
+          </div>
         </div>
-        <div>
-          <label for="flag3">Flag 3:</label><br><br>
-          <img src="img/imagen6.png" alt="CTF Logo" class="logo" width="150" height="100">
-          <p><a href="RETO3.zip" download>📁 Descargar carpeta relacionada con Flag 3</a></p>
-          <input type="text" id="flag3"><br>
-          <button type="button" id="btn-flag3" class="flag-btn">Verificar Flag 3</button><br>
-          <span id="flag3-resultado"></span><br><br>
+        <div style="text-align:center;">
+          <table style="margin: 0 auto;" cellpadding="5" border="2">
+            <tr>
+              <h4>
+                <td>
+                  <p>
+                    <font size=4 face="verdana, arial, helvetica"><b>Información de la Flag 1 </b></font>
+                  </p>
+                  <p>
+                    <b>Tu misión será, analizar una sospechosa captura de red interceptada tras un intento de intrusión relacionado con un antiguo ransomware llamado WannaCry.</b>
+                  </p>
+                </td>
+              </h4>
+            </tr>
+          </table>
         </div>
-        <div>
-          <label for="flag4">Flag 4:</label><br><br>
-          <img src="img/imagen7.png" alt="CTF Logo" class="logo" width="150" height="100">
-          <p><a href="RETO4.zip" download>📁 Descargar carpeta relacionada con Flag 4</a></p>
-          <input type="text" id="flag4"><br>
-          <button type="button" id="btn-flag4" class="flag-btn">Verificar Flag 4</button><br>
-          <span id="flag4-resultado"></span><br><br>
+        <br><br><br>
+        
+        <div class="challenge-card">
+          <div class="card-content">
+            <label for="flag3">Flag 3:</label><br><br>
+            <img src="img/imagen12.png" alt="CTF Logo" class="logo" width="150" height="100">
+            <p><a href="RETO3.zip" download>📁 Descargar carpeta relacionada con Flag 3</a></p>
+            <input type="text" id="flag3"><br>
+            <button type="button" id="btn-flag3">Verificar Flag 3</button><br>
+            <span id="flag3-resultado"></span>
+          </div>
         </div>
+        <div style="text-align:center;">
+          <table style="margin: 0 auto;" cellpadding="5" border="2">
+            <tr>
+              <h4>
+                <td>
+                  <p>
+                    <font size=4 face="verdana, arial, helvetica"><b>Información de la Flag 1 </b></font>
+                  </p>
+                  <p>
+                    <b>Tu misión sera</b>
+                  </p>
+                </td>
+              </h4>
+            </tr>
+          </table>
+        </div>
+        <br><br><br>
+        
+        <div class="challenge-card">
+          <div class="card-content">
+            <label for="flag4">Flag 4:</label><br><br>
+            <img src="img/imagen20.png" alt="CTF Logo" class="logo" width="150" height="100">
+            <p><a href="RETO4.zip" download>📁 Descargar carpeta relacionada con Flag 4</a></p>
+            <input type="text" id="flag4"><br>
+            <button type="button" id="btn-flag3">Verificar Flag 4</button><br>
+            <span id="flag4-resultado"></span>
+          </div>
+        </div>
+        <div style="text-align:center;">
+          <table style="margin: 0 auto;" cellpadding="5" border="2">
+            <tr>
+              <h4>
+                <td>
+                  <p>
+                    <font size=4 face="verdana, arial, helvetica"><b>Información de la Flag 1 </b></font>
+                  </p>
+                  <p>
+                    <b>Tu misión sera</b>
+                  </p>
+                </td>
+              </h4>
+            </tr>
+          </table>
+        </div>
+        <br><br>
       </form>
     </div>
 
-    <!-- Puedes poner esto en rojo.html o donde sea -->
-<button onclick="redirigirChat()">💬 Ir al Chat del Equipo</button>
-
-<script>
-function redirigirChat() {
-  const equipo = document.body.dataset.equipo;
-  if (equipo === "Rojo") {
-    window.location.href = "chat_rojo.html";
-  } else if (equipo === "Morado") {
-    window.location.href = "chat_morado.html";
-  } else if (equipo === "Azul") {
-    window.location.href = "chat_azul.html";
-  } else {
-    alert("Equipo no reconocido.");
-  }
-}
-</script>
-
-
-    <div style="margin-top: 20px;">
-      <button onclick="window.location.href='scoreboard.html'" style="padding: 10px 20px; font-size: 16px;">
-        🏆 Ver Scoreboard
-      </button>
-    </div>
+    <footer>
+      <button onclick="redirigirChat()">💬 Ir al Chat del Equipo</button>
+    
+      <div style="margin-top: 20px;">
+        <button onclick="window.location.href='scoreboard.html'" style="padding: 10px 20px; font-size: 16px;">
+          🏆 Ver Scoreboard
+        </button>
+      </div>
+    
+      <p style="margin-top: 20px;">&copy; 2025 Competencia de Ingeniería. Todos los derechos reservados.</p>
+    
+      <script>
+        function redirigirChat() {
+          const equipo = document.body.dataset.equipo;
+          if (equipo === "Rojo") {
+            window.location.href = "chat_rojo.html";
+          } else if (equipo === "Morado") {
+            window.location.href = "chat_morado.html";
+          } else if (equipo === "Azul") {
+            window.location.href = "chat_azul.html";
+          } else {
+            alert("Equipo no reconocido.");
+          }
+        }
+      </script>
+    </footer>
 
   <!-- 1. Configuración Global -->
   <script src="scripts/config.js"></script>
