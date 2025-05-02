@@ -1,60 +1,53 @@
-// scripts/equipo.js
-
-const API_URL = "https://ctf-api.vercel.app/api/validate-flag"; // Cambia si usas otro dominio
-const equipo = document.body.dataset.equipo;
-const nickname = localStorage.getItem('nickname') || "Anónimo";
-
-function validarFlag(challengeId) {
-    const input = document.getElementById(`flag${challengeId}`);
-    const resultado = document.getElementById(`flag${challengeId}-resultado`);
-    const btn = document.getElementById(`btn-flag${challengeId}`);
-
-    if (!input || !resultado || !btn) return;
-
-    const flag = input.value.trim();
-
-    if (!flag) {
-        resultado.innerText = "⚠️ Ingresa una flag primero.";
-        resultado.style.color = "orange";
-        return;
+// equipo.js
+for (let i = 1; i <= 4; i++) {
+    const btn = document.getElementById(`btn-flag${i}`);
+    if (btn) {
+      btn.addEventListener('click', () => verificarFlag(i));
     }
-
+  }
+  
+  async function verificarFlag(numeroFlag) {
+    const equipo = document.body.dataset.equipo;
+    const input = document.getElementById(`flag${numeroFlag}`);
+    const resultado = document.getElementById(`flag${numeroFlag}-resultado`);
+    const btn = document.getElementById(`btn-flag${numeroFlag}`);
+    const userFlag = input.value.trim();
+  
     btn.disabled = true;
     resultado.innerText = "Verificando...";
     resultado.style.color = "gray";
-
-    fetch(API_URL, {
+  
+    try {
+      const response = await fetch('/api/verificar', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ flag, challengeId, equipo, nickname })
-    })
-    .then(res => res.json())
-    .then(data => {
-        resultado.innerText = data.message;
-        resultado.style.color = data.success ? "green" : "red";
-        if (!data.success) btn.disabled = false;
-    })
-    .catch(err => {
-        console.error("Error al contactar la API:", err);
-        resultado.innerText = "❌ Error de red.";
+        body: JSON.stringify({
+          equipo,
+          numeroFlag,
+          flagIngresada: userFlag
+        })
+      });
+  
+      const data = await response.json();
+  
+      if (data.correcta) {
+        resultado.innerText = "✅ ¡Flag Correcta!";
+        resultado.style.color = "green";
+  
+        firebase.database().ref(`respuestas/${equipo}/flag${numeroFlag}`).set(true);
+        const puntajeRef = firebase.database().ref(`puntajes/${equipo}`);
+        puntajeRef.transaction(p => (p || 0) + 10);
+      } else {
+        resultado.innerText = "❌ Flag Incorrecta. Intenta de nuevo.";
         resultado.style.color = "red";
         btn.disabled = false;
-    });
-}
-
-function inicializarBotones() {
-    for (let i = 1; i <= 5; i++) {
-        const btn = document.getElementById(`btn-flag${i}`);
-        if (btn) {
-            btn.addEventListener("click", () => validarFlag(i));
-        }
+      }
+  
+    } catch (error) {
+      console.error("Error al verificar flag:", error);
+      resultado.innerText = "⚠️ Error en el servidor.";
+      resultado.style.color = "red";
+      btn.disabled = false;
     }
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-    if (!equipo) {
-        console.error("Falta atributo data-equipo en el <body>.");
-        return;
-    }
-    inicializarBotones();
-});
+  }
+  

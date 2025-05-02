@@ -1,22 +1,21 @@
 // scripts/firebase-init.js
 
 // Este script SÓLO inicializa Firebase.
-// Debe cargarse DESPUÉS de config.js y los SDKs de Firebase,
-// y ANTES de cualquier script que use firebase.database() (equipo.js, tabla.js, scoreboard.js)
+// Debe cargarse DESPUÉS de config.js y ANTES de cualquier script que use firebase.
 
 if (typeof firebase === 'undefined') {
-    console.error("Firebase SDK no cargado antes de firebase-init.js");
+    console.error("❌ Firebase SDK no está cargado. Asegúrate de incluir los scripts de Firebase antes de este archivo.");
 } else if (typeof firebaseConfig === 'undefined') {
-    console.error("firebaseConfig no definido antes de firebase-init.js (¿config.js cargado?)");
+    console.error("❌ firebaseConfig no está definido. ¿Olvidaste cargar config.js antes?");
 } else {
-    // Inicializar la aplicación Firebase por defecto
-    // Firebase maneja internamente para no inicializarla múltiples veces si ya existe.
-    if (!firebase.apps.length) {
-         firebase.initializeApp(firebaseConfig);
-         console.log("Firebase App inicializada.");
-    } else {
-         console.log("Firebase App ya estaba inicializada.");
-         // Opcionalmente, obtener la app por defecto si se necesita explícitamente
-         // firebase.app();
+    try {
+        if (!firebase.apps.length) {
+            firebase.initializeApp(firebaseConfig);
+            console.log("✅ Firebase ha sido inicializado correctamente.");
+        } else {
+            console.log("ℹ️ Firebase ya estaba inicializado.");
+        }
+    } catch (error) {
+        console.error("❌ Error al inicializar Firebase:", error);
     }
 }
