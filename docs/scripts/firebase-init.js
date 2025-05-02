@@ -1,8 +1,3 @@
-// scripts/firebase-init.js
-
-// Este script SÓLO inicializa Firebase.
-// Debe cargarse DESPUÉS de config.js y ANTES de cualquier script que use firebase.
-
 if (typeof firebase === 'undefined') {
     console.error("❌ Firebase SDK no está cargado. Asegúrate de incluir los scripts de Firebase antes de este archivo.");
 } else if (typeof firebaseConfig === 'undefined') {

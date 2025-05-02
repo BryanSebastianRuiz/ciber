@@ -1,11 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Equipo Rojo - CTF Virtual</title>
-  <link rel="stylesheet" href="styles/style.css">
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Equipo Morado | CTF Virtual</title>
+    
+    <meta name="description" content="Participación del Equipo Morado en el Capture The Flag (CTF) Virtual.">
+    <meta name="author" content="Equipo Morado">
+  
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  
+    <meta property="og:title" content="Equipo Morado - CTF Virtual">
+    <meta property="og:description" content="Explora el trabajo y logros del Equipo Morado en este evento de ciberseguridad.">
+    <meta property="og:image" content="https://i.imgur.com/zP7C8zS.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tusitio.com/equipomorado">
+  
+    <link rel="stylesheet" href="styles/style.css">
+  </head>
 
 <body class="rojo" data-equipo="Rojo">
   <div class="container">
@@ -13,8 +28,7 @@
 
     <div class="flags">
       <h2>Ingresar Flags</h2>
-      <form id="flagForm" onsubmit="return false;"> <!-- Evitar envío real del form -->
-        <!-- Flags 1 a 5 (estructura HTML sin cambios) -->
+      <form id="flagForm" onsubmit="return false;">
         <div class="challenge-card">
           <div class="card-content">
             <label for="flag1">Flag 1:</label><br><br>
@@ -60,10 +74,10 @@
               <h4>
                 <td>
                   <p>
-                    <font size=4 face="verdana, arial, helvetica"><b>Información de la Flag 1 </b></font>
+                    <font size=4 face="verdana, arial, helvetica"><b>Información de la Flag 2 </b></font>
                   </p>
                   <p>
-                    <b>Tu misión será, analizar una sospechosa captura de red interceptada tras un intento de intrusión relacionado con un antiguo ransomware llamado WannaCry. Esta simulación es parte de un entrenamiento avanzado en ciberdefensa y análisis de tráfico.</b>
+                    <b><i>Tu misión será</i></b>, analizar una sospechosa captura de red interceptada tras un intento de intrusión relacionado con un antiguo ransomware llamado WannaCry. Esto es parte de un entrenamiento avanzado en ciberdefensa y análisis de tráfico.
                   </p>
                 </td>
               </h4>
@@ -88,7 +102,7 @@
               <h4>
                 <td>
                   <p>
-                    <font size=4 face="verdana, arial, helvetica"><b>Información de la Flag 1 </b></font>
+                    <font size=4 face="verdana, arial, helvetica"><b>Información de la Flag 3 </b></font>
                   </p>
                   <p>
                     <b>Tu misión sera</b>
@@ -116,7 +130,7 @@
               <h4>
                 <td>
                   <p>
-                    <font size=4 face="verdana, arial, helvetica"><b>Información de la Flag 1 </b></font>
+                    <font size=4 face="verdana, arial, helvetica"><b>Información de la Flag 4 </b></font>
                   </p>
                   <p>
                     <b>Tu misión sera</b>
@@ -157,19 +171,14 @@
       </script>
     </footer>
 
-  <!-- === ORDEN DE SCRIPTS CRÍTICO === -->
-  <script src="scripts/config.js"></script>
-
-  <!-- Firebase SDKs -->
-  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
-
-  <!-- Inicialización -->
-  <script src="scripts/firebase-init.js"></script>
-
-  <!-- Funcionalidad -->
-  <script src="scripts/equipo.js"></script>
-  <script src="scripts/tabla.js"></script>
+<script src="scripts/config.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+<script src="scripts/firebase-init.js"></script>
+<script src="scripts/registro.js"></script>
+<script src="scripts/equipo.js"></script>
+<script src="scripts/tabla.js"></script>
+<script src="scripts/admin.js"></script>
 
 </body>
 </html>

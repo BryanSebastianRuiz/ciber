@@ -1,5 +1,3 @@
-// scripts/scoreboard.js
-
 if (typeof firebase === 'undefined' || typeof firebase.app !== 'function' || !firebase.apps.length) {
     console.error("🔥 ERROR: Firebase no está inicializado.");
 } else if (typeof firebaseConfig === 'undefined') {

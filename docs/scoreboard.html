@@ -18,19 +18,16 @@
         </tr>
       </thead>
       <tbody>
-        <!-- Las filas se generan dinámicamente por tabla.js -->
       </tbody>
     </table>
     <p id="loading-message">Cargando puntajes...</p>
   </div>
 
-  <!-- Firebase y scripts -->
   <script src="scripts/config.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
   <script src="scripts/firebase-init.js"></script>
 
-  <!-- Adaptado scoreboard.js para actualizar data-leader -->
   <script>
     if (typeof firebase === 'undefined' || typeof firebase.app !== 'function' || !firebase.apps.length) {
       console.error("¡ERROR CRÍTICO! Firebase no inicializado antes de scoreboard.js.");
@@ -49,7 +46,7 @@
         let leaderTeam = null;
         if (scoreData.length > 0 && scoreData[0].puntaje > 0) {
           if (scoreData.length > 1 && scoreData[0].puntaje === scoreData[1].puntaje) {
-            leaderTeam = null; // Empate
+            leaderTeam = null;
           } else {
             leaderTeam = scoreData[0].equipo;
           }

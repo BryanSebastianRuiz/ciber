@@ -1,6 +1,3 @@
-// scripts/equipo.js
-
-// Asegurarse de que Firebase esté inicializado y config esté cargado
 if (typeof firebase === 'undefined' || typeof firebase.app !== 'function' || !firebase.apps.length) {
     console.error("¡ERROR CRÍTICO! Firebase no inicializado antes de equipo.js. Revisa el orden de los scripts en el HTML.");
 } else if (typeof correctFlags === 'undefined') {
@@ -9,16 +6,13 @@ if (typeof firebase === 'undefined' || typeof firebase.app !== 'function' || !fi
 
     const db = firebase.database();
 
-    // Obtener el nombre del equipo del atributo 'data-equipo' en el body del HTML
-    const equipo = document.body.dataset.equipo;
+     const equipo = document.body.dataset.equipo;
 
     if (!equipo) {
         console.error("¡ERROR! No se pudo determinar el equipo. Falta 'data-equipo' en la etiqueta <body> del HTML.");
     } else {
         console.log(`Script cargado para el equipo: ${equipo}`);
     }
-
-    // --- Funciones
 
     function verificarFlag(numeroFlag) {
         if (!equipo) return;
@@ -80,7 +74,6 @@ if (typeof firebase === 'undefined' || typeof firebase.app !== 'function' || !fi
                 resultado.style.color = "red";
                 btn.disabled = false;
 
-                // === Guardar respuesta incorrecta en Firebase ===
                 const nickname = localStorage.getItem('nickname') || "Anónimo";
                 db.ref(`respuestas/${equipo}`).push({
                     flag: `flag${numeroFlag}`,

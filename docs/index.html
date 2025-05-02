@@ -24,7 +24,6 @@
   </div>
 
   <script>
-    // Mapeo de contraseñas seguras a equipos
     const contraseñasEquipos = {
       redteam2025: 'rojo',
       purpleforce2025: 'morado',
@@ -33,13 +32,11 @@
 
     const contraseñas = Object.keys(contraseñasEquipos);
 
-    // Función para validar nickname
     function esNicknameValido(nick) {
       const regex = /^[a-zA-Z0-9_-]{3,20}$/;
       return regex.test(nick);
     }
 
-    // Prevenir XSS
     function escapeHTML(texto) {
       return texto.replace(/[&<>"']/g, (m) => ({
         '&': '&amp;',
@@ -68,7 +65,7 @@
       const contraseñaAleatoria = contraseñas[Math.floor(Math.random() * contraseñas.length)];
       const equipoAleatorio = contraseñasEquipos[contraseñaAleatoria];
 
-      alert(`Tu contraseña aleatoria es: ${contraseñaAleatoria}`);
+ 
       document.getElementById('password').value = contraseñaAleatoria;
 
       localStorage.setItem('nickname', nickname);
@@ -104,7 +101,6 @@
       }
     });
 
-    // Protección mínima contra inspección con DevTools
     setInterval(() => {
       if (window.outerHeight - window.innerHeight > 100 || window.outerWidth - window.innerWidth > 100) {
         console.warn("⚠️ DevTools puede estar abierto. No manipules el sitio.");

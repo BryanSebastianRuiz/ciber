@@ -7,6 +7,11 @@
 </head>
 <body class="chat morado" data-equipo="Morado">
   <div class="container">
+    <div style="margin-bottom: 15px;">
+      <button onclick="window.location.href='morado.html'" style="padding: 8px 16px; font-size: 14px;">
+        Volver a la Página del Equpo
+      </button>
+    </div>
     <h1>Chat del Equipo Morado 🟣</h1>
 
     <div id="chat-box" style="height: 300px; overflow-y: scroll; border: 1px solid #ccc; padding: 10px;"></div>
@@ -17,11 +22,37 @@
     </form>
   </div>
 
-  <!-- Firebase y scripts -->
   <script src="scripts/config.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
   <script src="scripts/firebase-init.js"></script>
   <script src="scripts/chat.js"></script>
+
+  <footer>
+    <button onclick="redirigirChat()">💬 Ir al Chat del Equipo</button>
+  
+    <div style="margin-top: 20px;">
+      <button onclick="window.location.href='scoreboard.html'" style="padding: 10px 20px; font-size: 16px;">
+        🏆 Ver Scoreboard
+      </button>
+    </div>
+  
+    <p style="margin-top: 20px;">&copy; 2025 Competencia de Ingeniería. Todos los derechos reservados.</p>
+  
+    <script>
+      function redirigirChat() {
+        const equipo = document.body.dataset.equipo;
+        if (equipo === "Rojo") {
+          window.location.href = "chat_rojo.html";
+        } else if (equipo === "Morado") {
+          window.location.href = "chat_morado.html";
+        } else if (equipo === "Azul") {
+          window.location.href = "chat_azul.html";
+        } else {
+          alert("Equipo no reconocido.");
+        }
+      }
+    </script>
+  </footer>
 </body>
 </html>
